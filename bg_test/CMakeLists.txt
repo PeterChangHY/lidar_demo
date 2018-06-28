@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   pcl_ros
   roscpp
   sensor_msgs
+  visualization_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -187,8 +188,12 @@ include_directories(
 # )
 
 add_executable(bg_sub src/bg_sub.cpp)
+
 target_link_libraries(bg_sub ${catkin_LIBRARIES})
 
+
+##add_executable(bg_sub_voxel src/bg_sub_voxel.cpp)
+##target_link_libraries(bg_sub_voxel ${catkin_LIBRARIES})
 
 #############
 ## Testing ##
