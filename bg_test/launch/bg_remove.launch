@@ -1,0 +1,19 @@
+
+<launch>
+<!-- open velodyne driver-->
+<include file="$(find velodyne_pointcloud)/launch/run_64e_s3.launch">
+  <arg name="min_range" value="1.5" />
+  <arg name="max_range" value="10.0"/>
+  <arg name= "rpm" value="600" />
+</include>
+
+<!-- open bg_removal node -->
+<node name="bg_removal" pkg="bg_test" type="bg_sub">
+  <param name="input" value="/velodyne_points" />
+</node>
+
+<!-- rviz -->
+
+<node type="rviz" name="rviz" pkg="rviz" args="-d $(find bg_test)/conf/rviz_conf.rviz" />
+
+</launch>
