@@ -8,8 +8,8 @@
 </include>
 
 <!-- open bg_removal node -->
-<node name="bg_removal" pkg="bg_test" type="bg_sub">
-  <param name="input" value="/velodyne_points" />
+<node name="bg_removal" pkg="bg_test" type="bg_sub" output="screen">
+  <param name="input_topic" value="/velodyne_points" />
 </node>
 
 <!-- rviz -->

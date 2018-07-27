@@ -189,32 +189,25 @@ cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
 }
 
 
-
-
-void chatterCallback(const std_msgs::String::ConstPtr& msg)
-{
-  ROS_INFO("I heard: [%s], so update the background", msg->data.c_str());
-  update_flag = true;
-  flag = true;
-}
-
-
 int main (int argc, char** argv)
 {
   // Initialize ROS
   ros::init (argc, argv, "my_pcl_tutorial");
   ros::NodeHandle nh;
+  std::string input_topic;
+  if ( !nh.getParam("input_topic", input_topic)){
+	input_topic = "/velodyne_points";
+  }
 
   // Create a ROS subscriber for the input point cloud
-  ros::Subscriber sub = nh.subscribe ("input", 1, cloud_cb);
-
+  ros::Subscriber sub = nh.subscribe (input_topic, 1, cloud_cb);
+  ROS_INFO("input: %s",input_topic.c_str());
   // Create a ROS publisher for the output point cloud
   pub_bg = nh.advertise<sensor_msgs::PointCloud2> ("background", 1);
   pub_non_bg = nh.advertise<sensor_msgs::PointCloud2> ("non_background", 1);
   //bbox
   pub_non_bg_bbox = nh.advertise<visualization_msgs::MarkerArray> ("non_background_bbox", 10);
 
-  ros::Subscriber sub_back = nh.subscribe("update_bg", 1000, chatterCallback);
   ros::spin();
 
 }
