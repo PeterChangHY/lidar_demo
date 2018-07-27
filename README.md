@@ -22,4 +22,6 @@ Config the network of velodyne, follow http://wiki.ros.org/velodyne/Tutorials/Ge
 
 ### Example
 
+green = background
+orange = non-background
 ![background_example](/images/bg_example.png)
