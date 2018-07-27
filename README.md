@@ -4,9 +4,7 @@
 
 ## install
 
-1. ```$git clone git@github.com:PeterChangHY/lidar_demo.git```
-
-2. 
+```$git clone git@github.com:PeterChangHY/lidar_demo.git```
 ```$cd lidar_demo```  
 ```$catkin_make install```  
 ```$source devel/setup.bash```
