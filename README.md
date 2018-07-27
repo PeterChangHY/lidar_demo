@@ -20,5 +20,6 @@ Config the network of velodyne, follow http://wiki.ros.org/velodyne/Tutorials/Ge
 
 ```$roslaunch bg_test bg_remove.launch```
 
-###Example
-!(https://github.com/PeterChangHY/lidar_demo/blob/master/images/bg_example.png "background_remove_example")
+### Example
+
+![background_example](/images/bg_example.png)
