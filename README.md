@@ -1,5 +1,6 @@
 # lidar demo in Cupertino office
 
+It will capture the first few lidar scans as background, then anything other than backgoud in non-background.
 
 
 ## install
@@ -19,3 +20,4 @@ Config the network of velodyne, follow http://wiki.ros.org/velodyne/Tutorials/Ge
 
 ```$roslaunch bg_test bg_remove.launch```
 
+###Example
